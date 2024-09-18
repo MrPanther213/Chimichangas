@@ -14,4 +14,4 @@ class jedi:
         obiwan.introduce()
         obiwan.force_push()
 
-        sekol= jedi("Ninjafiveo", "blue", "Janitor")
+        Zach = jedi("zach-obi", "green", "master")
