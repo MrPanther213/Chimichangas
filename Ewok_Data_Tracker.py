@@ -14,6 +14,11 @@ ewok_data["weapon"] = "Bow and Arrow"  # Updating the weapon
 ewok_data["rank"] = "Chief"  # Updating the rank
 ewok_data["homeworld"] = "Endor"  # Adding a new attribute for homeworld
 
+print("\nUpdated Ewok Data:")
+for key, value in ewok_data.items():
+    print(f"{key}: {value}")
+
+
 ewok_tribe = {
     "Wicket": ewok_data,
     "Chief Chirpa": {
