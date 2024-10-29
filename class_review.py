@@ -17,7 +17,7 @@ class Dinosaur:
             print("Invalid age: Age must be a non-negative number")
 
     def roar(self):
-        return f"{self.name} lets out a thunderous roar!"
+        return f"{self.name} roars"
 
 class FlyingDinosaur(Dinosaur):
     def __init__(self, name, species, diet, age, wing_span):
@@ -25,7 +25,7 @@ class FlyingDinosaur(Dinosaur):
         self.wing_span = wing_span
 
     def roar(self):
-        return f"{self.name} screeches in the sky!"
+        return f"{self.name} rawrs"
 
 class WaterDinosaur(Dinosaur):
     def __init__(self, name, species, diet, age, swim_speed):
@@ -33,26 +33,28 @@ class WaterDinosaur(Dinosaur):
         self.swim_speed = swim_speed
 
     def roar(self):
-        return f"{self.name} roars underwater, creating bubbles!"
+        return f"{self.name} bubble noises"
 
 # Create instances of Dinosaur and its subclasses
-jack_black = Dinosaur("Jack Black", "Tyrannosaurus Rex", "Carnivore", 10)
-rubeus = FlyingDinosaur("Rubeus", "Pterodactyl", "Carnivore", 5, wing_span=12)
-hurley = WaterDinosaur("Hurley", "Mosasaurus", "Carnivore", 7, swim_speed=20)
+Rex = Dinosaur("Rex", "Tyrannosaurus Rex", "Carnivore", 10)
+Thunderclap = FlyingDinosaur("Thunderclap", "Pterodactyl", "Carnivore", 5, wing_span=12)
+Meuse = WaterDinosaur("Meuse", "Mosasaurus", "Carnivore", 7, swim_speed=20)
 
 # Test roar method (polymorphism)
-print(jack_black.roar())   # Expected: Standard roar
-print(rubeus.roar())       # Expected: Screeching sound for flying dinosaur
-print(hurley.roar())       # Expected: Roaring underwater, that bubbles are made
+print(Rex.roar())   # Expected: Standard roar
+print(Thunderclap.roar())       # Expected: Screeching sound for flying dinosaur
+print(Meuse.roar())       # Expected: Roaring underwater, that bubbles are made
 
 # Test encapsulation (accessing age via getter and setter)
-print(rubeus.get_age())     # Should return 5
-rubeus.set_age(8)           # Update age to 8
-print(rubeus.get_age())     # Verify update
+print(Thunderclap.get_age())     # Should return 5
+Thunderclap.set_age(8)           # Update age to 8
+print(Thunderclap.get_age())     # Verify update
 
 # Test invalid age setting
-hurley.set_age(-3)          # Expected: Print warning about invalid age
+Meuse.set_age(3)          # Expected: Print warning about invalid age
 
 # Demonstrate object identity
-hurley_clone = WaterDinosaur("Hurley", "Mosasaurus", "Carnivore", 7, swim_speed=20)
-print(id(hurley) == id(hurley_clone))  # Expected: False since they are different instances
+Meuse_clone = WaterDinosaur("Meuse", "Mosasaurus", "Carnivore", 7, swim_speed=20)
+print(id(Meuse) == id(Meuse_clone))  # Expected: False since they are different instances
+
+
