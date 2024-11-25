@@ -5,7 +5,7 @@ class Dinosaur:
         self.name = name
         self.species = species
         self.diet = diet
-        self._age = age  # Encapsulated age attribute
+        self._age = age   
 
     def get_age(self):
         return self._age
@@ -35,26 +35,25 @@ class WaterDinosaur(Dinosaur):
     def roar(self):
         return f"{self.name} bubble noises"
 
-# Create instances of Dinosaur and its subclasses
 Rex = Dinosaur("Rex", "Tyrannosaurus Rex", "Carnivore", 10)
 Thunderclap = FlyingDinosaur("Thunderclap", "Pterodactyl", "Carnivore", 5, wing_span=12)
 Meuse = WaterDinosaur("Meuse", "Mosasaurus", "Carnivore", 7, swim_speed=20)
 
-# Test roar method (polymorphism)
-print(Rex.roar())   # Expected: Standard roar
-print(Thunderclap.roar())       # Expected: Screeching sound for flying dinosaur
-print(Meuse.roar())       # Expected: Roaring underwater, that bubbles are made
+# Test roar method 
+print(Rex.roar())   # Expected to have a standard roar
+print(Thunderclap.roar())       # Screeching roar for flying dinosaur
+print(Meuse.roar())       #Roaring underwater, where bubbles are made
 
-# Test encapsulation (accessing age via getter and setter)
-print(Thunderclap.get_age())     # Should return 5
-Thunderclap.set_age(8)           # Update age to 8
-print(Thunderclap.get_age())     # Verify update
+# Test encapsulation
+print(Thunderclap.get_age())     
+Thunderclap.set_age(8)           
+print(Thunderclap.get_age())    
 
 # Test invalid age setting
 Meuse.set_age(3)          # Expected: Print warning about invalid age
 
 # Demonstrate object identity
 Meuse_clone = WaterDinosaur("Meuse", "Mosasaurus", "Carnivore", 7, swim_speed=20)
-print(id(Meuse) == id(Meuse_clone))  # Expected: False since they are different instances
+print(id(Meuse) == id(Meuse_clone))  # Expecting to be False since they are different
 
 

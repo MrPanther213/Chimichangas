@@ -146,8 +146,8 @@ while True:
         snake_body.pop()
         
     if not fruit_spawn:
-        fruit_position = [random.randrange(1, (window_x//10)) * 10, 
-                          random.randrange(1, (window_y//10)) * 10]
+        fruit_position = [random.randrange(1, (window_x//20)) * 20, 
+                          random.randrange(1, (window_y//20)) * 20]
         
     fruit_spawn = True
     game_window.fill(black)
