@@ -1,0 +1,2 @@
+#You are a "Shardbound," a warrior chosen by mysterious celestial forces to repair the fabric of the universe. The world of Aetheris is fractured into sprawling, interconnected regions filled with ancient ruins, magical creatures, and remnants of a lost civilization. Players must explore, collect powerful Aether Shards, battle foes, and unravel a deeply woven storyline while interacting with other players in a seamless online world.
+
