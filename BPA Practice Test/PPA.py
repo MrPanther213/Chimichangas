@@ -10,6 +10,9 @@ damage = random.randint(strength - 5, strength + 5)
 # Start the game
 def display_character():
     print( "name: {name}", "weapon: {Weapon}", "hp: {health}", "gold: {gold}","Strength: {strength}","Level: {level}")
+# Start the game
+def main():
+    start_game()
 
 def start_game():
     print("Welcome to the dungeon!")
@@ -21,47 +24,36 @@ def start_game():
     return True
 
 def battle_mode():
- global health
-while health > 0:
-    print(f"A wild monster appears! It has {monster_health} health points.")
-    monster_health -= strength
-player_choice = input("Do you want to attack(1) or Run(2)? ")
-if player_choice == "1":
-    monster_health -= damage
-    print(f"You hit the monster for {damage} damage!")
-if monster_health <= 0:
-        print("You defeated the monster!")
-        player_gold = random.randint(1,5) * 10
-        gold += player_gold
-        print(f"You found {player_gold} gold!")
+     global health
+     global monster_health
+     global damage
+     while monster_health > 0:
+        print(f"A wild monster appears! It has {monster_health} health points.")
+        player_choice = input("Do you want to attack(1) or Run(2)? ")
+        if player_choice == "1":
+            monster_health -= damage
+            print(f"You hit the monster for {damage} damage!")
+        if monster_health <= 0:
+            print("You defeated the monster!")
+            player_gold = random.randint(1,5) * 10
+            gold += player_gold
+            print(f"You found {player_gold} gold!")
+            break
+        monster_damage = random.randint(strength - 5, strength + 5)
+        monster_health -= monster_damage
+        print(f"The monster hits you for {monster_damage} damage!")
 # Main game loop
-def main():
- start_game()
- while True:
-    display_character()
-    if battle_mode():
-        level += 1
-        health = random.randint(7,10) * 10
-        print("You've progressed to level", level)
-        print("Your health has been restored to full.")
-        if gold >= 100:
-            print("Congratulations! You've reached the next level with 100 gold!")
-            gold -= 100
-            print("You have lost 100 gold!")
-            if gold >= 100 and gold <= 0:
-                print("Congratulations! You've reached the final level with 100 gold!")
-                print("Congratulations! You've reached the final level with 0 gold!")
-                exit()
-    if health <0:
+if health <0:
      print("You have died!")
 
-    else:
+else:
      print("You have completed the dungeon!")
      print("Your final score is: ", gold)
      print("Game Over!")
      exit()
 
 start_game()
+
 
 
 #Press Enter to continue
